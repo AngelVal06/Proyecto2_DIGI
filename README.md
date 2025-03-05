@@ -1,6 +1,6 @@
 # Proyecto2_DIGI
 
-### Nombre del Proyecto: No lo sé aún
+### Nombre del Proyecto: GIGIpROYECT
 **Descripción:**
 Un script o aplicación simple que formatea texto rápidamente para tareas específicas, como:
 
