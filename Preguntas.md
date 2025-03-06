@@ -5,17 +5,11 @@
    - **Procesamiento de Datos**: El texto ingresado se procesa mediante las funciones de formateo (por ejemplo, convertir a mayúsculas, minúsculas, snake_case, etc.). Cada función toma el texto de entrada, lo transforma y lo muestra en el área de salida (`text_output`).
    - **Eliminación de Datos**: Los datos no se almacenan permanentemente en la aplicación. Una vez que el usuario cierra la aplicación, los datos ingresados y formateados se pierden, ya que no hay persistencia de datos (no se guardan en archivos ni en bases de datos).
 
-   **Propuesta de Mejora**: Para gestionar el ciclo de vida de los datos de manera más eficiente, se podría implementar:
-   - **Persistencia de Datos**: Guardar los datos en un archivo o base de datos para su uso futuro.
-   - **Eliminación Segura**: Implementar una función que permita al usuario eliminar manualmente los datos de la aplicación, asegurándose de que no queden rastros en la memoria o en archivos temporales.
 
 ### 2. **¿Qué estrategia sigues para garantizar la consistencia e integridad de los datos?**
    - **Consistencia**: En la aplicación actual, la consistencia de los datos se mantiene al asegurarse de que las funciones de formateo no alteren el texto de manera incorrecta. Por ejemplo, las funciones de conversión a mayúsculas o minúsculas no deberían perder información.
    - **Integridad**: La integridad se garantiza al no permitir que el texto formateado contenga errores o caracteres no deseados. Por ejemplo, la función `quitar_caracteres_especiales` elimina caracteres que no son alfanuméricos, lo que ayuda a mantener la integridad del texto.
 
-   **Propuesta de Mejora**: Para mejorar la integridad y trazabilidad de los datos, se podría:
-   - **Validación de Entrada**: Implementar validaciones para asegurarse de que el texto ingresado cumpla con ciertos criterios antes de ser procesado.
-   - **Registro de Cambios**: Mantener un registro de las operaciones realizadas sobre el texto (por ejemplo, un historial de cambios) para rastrear cómo se ha modificado el texto a lo largo del tiempo.
 
 ### 3. **Si no trabajas con datos, ¿cómo podrías incluir una funcionalidad que los gestione de forma eficiente?**
    Si no se trabaja con datos en la aplicación actual, se podrían incluir las siguientes funcionalidades:
@@ -64,21 +58,13 @@
    - **Normativas Relevantes**:
      - **GDPR**: Si la aplicación llegara a manejar datos personales de usuarios de la UE, sería necesario garantizar el consentimiento explícito del usuario, implementar medidas de protección de datos y permitir el acceso, rectificación y eliminación de los datos.
      - **LOPD (Ley Orgánica de Protección de Datos)**: En España, esta ley regula el tratamiento de datos personales y requeriría medidas similares al GDPR.
-   - **Propuesta de Mejora**: Para cumplir con estas normativas, se podrían implementar:
-     - **Política de Privacidad**: Incluir una política de privacidad clara que explique cómo se recopilan, usan y protegen los datos.
-     - **Consentimiento del Usuario**: Solicitar el consentimiento explícito del usuario antes de recopilar o procesar sus datos personales.
-     - **Derechos del Usuario**: Permitir a los usuarios acceder, rectificar y eliminar sus datos personales.
 
 ### 3. **Si no implementaste medidas de seguridad, ¿qué riesgos potenciales identificas y cómo los abordarías en el futuro?**
    - **Riesgos Potenciales**:
      - **Acceso No Autorizado**: Si la aplicación llegara a almacenar datos en la nube, podría ser vulnerable a accesos no autorizados.
      - **Pérdida de Datos**: Sin medidas de redundancia o copias de seguridad, los datos podrían perderse en caso de fallos técnicos.
      - **Ataques de Inyección**: Si no se valida adecuadamente la entrada del usuario, la aplicación podría ser vulnerable a ataques de inyección de código.
-   - **Propuesta de Mejora**:
-     - **Cifrado y Autenticación**: Implementar cifrado de datos y sistemas de autenticación robustos para proteger los datos.
-     - **Copias de Seguridad**: Realizar copias de seguridad periódicas de los datos para prevenir su pérdida.
-     - **Validación de Entrada**: Validar y sanitizar la entrada del usuario para prevenir ataques de inyección.
-
+   
 ---
 
 # Implicación de las THD en negocio y planta (2e):
