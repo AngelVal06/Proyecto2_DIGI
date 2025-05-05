@@ -5,14 +5,22 @@ import os
 from tkinterdnd2 import TkinterDnD, DND_FILES
 
 class TextFormatterApp(TkinterDnD.Tk):
+    """
+    Clase principal de la aplicación Advanced Text Formatter.
+    Permite formatear texto y procesar archivos de texto o CSV en lotes.
+    """
+
     def __init__(self):
+        """
+        Constructor de la clase. Configura la ventana principal y los estilos de la interfaz.
+        """
         super().__init__()
         self.title("Advanced Text Formatter")
         self.geometry("700x800")
         self.configure(bg="#f0f0f0")
         self.resizable(True, True)
         
-        # Estilo
+        # Configuración de estilos
         self.style = ttk.Style()
         self.style.configure('TFrame', background='#f0f0f0')
         self.style.configure('TLabel', background='#f0f0f0', font=('Arial', 10))
@@ -23,6 +31,9 @@ class TextFormatterApp(TkinterDnD.Tk):
         self.create_widgets()
         
     def create_widgets(self):
+        """
+        Crea los widgets principales de la aplicación, incluyendo las pestañas.
+        """
         # Notebook para pestañas
         notebook = ttk.Notebook(self)
         notebook.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
@@ -42,6 +53,12 @@ class TextFormatterApp(TkinterDnD.Tk):
         self.create_batch_tab(batch_tab)
     
     def create_simple_tab(self, parent):
+        """
+        Crea los widgets para la pestaña de formato de texto simple.
+
+        Args:
+            parent (ttk.Frame): Frame padre donde se colocarán los widgets.
+        """
         # Frame de entrada
         input_frame = ttk.Frame(parent)
         input_frame.pack(fill=tk.X, padx=10, pady=10)
@@ -116,6 +133,12 @@ class TextFormatterApp(TkinterDnD.Tk):
         self.text_output.config(yscrollcommand=scrollbar.set)
     
     def create_batch_tab(self, parent):
+        """
+        Crea los widgets para la pestaña de procesamiento por lotes.
+
+        Args:
+            parent (ttk.Frame): Frame padre donde se colocarán los widgets.
+        """
         # Frame de instrucciones
         instructions_frame = ttk.Frame(parent)
         instructions_frame.pack(fill=tk.X, padx=10, pady=(10, 5))
