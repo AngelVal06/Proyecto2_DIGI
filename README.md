@@ -77,4 +77,6 @@ pyinstaller --onefile --windowed Proyecto.py
 
 ---
 
+## 🔗 **Enlace a la Demo**
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://proyecto2digi-cgdsk5knpkhchzpxhrsdw2.streamlit.app/)
 
