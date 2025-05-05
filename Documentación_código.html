@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Text Formatter - Documentación Completa</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --light: #ecf0f1;
+            --dark: #34495e;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --danger: #e74c3c;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            background-color: #f9f9f9;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        h1, h2, h3 {
+            color: var(--primary);
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+        
+        h3 {
+            color: var(--dark);
+            margin-top: 1.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+        
+        nav {
+            background-color: var(--light);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        nav a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .section {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .method {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .method:last-child {
+            border-bottom: none;
+        }
+        
+        .method-name {
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Consolas', monospace;
+        }
+        
+        .method-desc {
+            margin-bottom: 1rem;
+        }
+        
+        .method-args, .method-returns, .method-examples {
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--light);
+        }
+        
+        .method-args h4, .method-returns h4, .method-examples h4 {
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .arg, .return {
+            margin-bottom: 0.5rem;
+        }
+        
+        .arg-name, .return-type {
+            font-family: 'Consolas', monospace;
+            color: var(--secondary);
+        }
+        
+        code, pre {
+            background-color: #f5f5f5;
+            font-family: 'Consolas', monospace;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+        }
+        
+        pre {
+            padding: 1rem;
+            overflow-x: auto;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .code-block {
+            position: relative;
+        }
+        
+        .copy-btn {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+        
+        .copy-btn:hover {
+            background-color: var(--secondary);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .feature {
+            background-color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .feature h4 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1rem;
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 0 10px;
+            }
+            
+            header {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Advanced Text Formatter</h1>
+        <p class="subtitle">Documentación completa del proyecto</p>
+    </header>
+    
+    <nav>
+        <a href="#overview">Resumen</a>
+        <a href="#installation">Instalación</a>
+        <a href="#class-docs">Clase Principal</a>
+        <a href="#formatting-functions">Funciones de Formateo</a>
+        <a href="#batch-functions">Procesamiento por Lotes</a>
+        <a href="#examples">Ejemplos</a>
+    </nav>
+    
+    <section id="overview" class="section">
+        <h2>Resumen del Proyecto</h2>
+        <p>Advanced Text Formatter es una aplicación completa para formatear texto con interfaz gráfica y capacidad de procesamiento por lotes.</p>
+        
+        <h3>Características Principales</h3>
+        <div class="features">
+            <div class="feature">
+                <h4>Interfaz Gráfica</h4>
+                <p>Interfaz intuitiva con TKinter que permite formatear texto fácilmente.</p>
+            </div>
+            <div class="feature">
+                <h4>Múltiples Formatos</h4>
+                <p>Soporte para 10+ operaciones de formateo diferentes.</p>
+            </div>
+            <div class="feature">
+                <h4>Procesamiento por Lotes</h4>
+                <p>Capacidad de procesar múltiples archivos (.txt, .csv) a la vez.</p>
+            </div>
+            <div class="feature">
+                <h4>Drag and Drop</h4>
+                <p>Soporte para arrastrar y soltar archivos directamente a la aplicación.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="installation" class="section">
+        <h2>Instalación y Configuración</h2>
+        
+        <h3>Requisitos</h3>
+        <ul>
+            <li>Python 3.8 o superior</li>
+            <li>Bibliotecas: tkinter, tkinterdnd2, re, os</li>
+        </ul>
+        
+        <h3>Instalación</h3>
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+            <pre><code>pip install tkinterdnd2</code></pre>
+        </div>
+        
+        <h3>Ejecución</h3>
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+            <pre><code>python Proyecto.py</code></pre>
+        </div>
+    </section>
+    
+    <section id="class-docs" class="section">
+        <h2>Clase Principal: TextFormatterApp</h2>
+        <p>Clase que representa la aplicación principal, hereda de TkinterDnD.Tk para soportar drag and drop.</p>
+        
+        <div class="method">
+            <div class="method-name">__init__(self)</div>
+            <div class="method-desc">
+                <p>Constructor de la clase. Configura la ventana principal y los estilos de la interfaz.</p>
+            </div>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+                <pre><code>def __init__(self):
+    super().__init__()
+    self.title("Advanced Text Formatter")
+    self.geometry("700x800")
+    self.configure(bg="#f0f0f0")
+    self.resizable(True, True)
+    
+    # Configuración de estilos
+    self.style = ttk.Style()
+    self.style.configure('TFrame', background='#f0f0f0')
+    self.style.configure('TLabel', background='#f0f0f0', font=('Arial', 10))
+    self.style.configure('TButton', font=('Arial', 9), padding=5)
+    
+    self.create_widgets()</code></pre>
+            </div>
+        </div>
+        
+        <div class="method">
+            <div class="method-name">create_widgets(self)</div>
+            <div class="method-desc">
+                <p>Crea todos los widgets de la interfaz, incluyendo las pestañas principales.</p>
+            </div>
+        </div>
+        
+        <div class="method">
+            <div class="method-name">create_simple_tab(self, parent)</div>
+            <div class="method-desc">
+                <p>Crea los widgets para la pestaña de formateo de texto simple.</p>
+                <div class="method-args">
+                    <h4>Argumentos</h4>
+                    <div class="arg">
+                        <span class="arg-name">parent</span>: Frame contenedor donde se colocarán los widgets.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="method">
+            <div class="method-name">create_batch_tab(self, parent)</div>
+            <div class="method-desc">
+                <p>Crea los widgets para la pestaña de procesamiento por lotes.</p>
+                <div class="method-args">
+                    <h4>Argumentos</h4>
+                    <div class="arg">
+                        <span class="arg-name">parent</span>: Frame contenedor donde se colocarán los widgets.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="formatting-functions" class="section">
+        <h2>Funciones de Formateo de Texto</h2>
+        
+        <div class="method">
+            <div class="method-name">convertir_mayusculas(self)</div>
+            <div class="method-desc">
+                <p>Convierte el texto de entrada a mayúsculas.</p>
+                <div class="method-examples">
+                    <h4>Ejemplo</h4>
+                    <p>Entrada: "hola mundo" → Salida: "HOLA MUNDO"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="method">
+            <div class="method-name">convertir_minusculas(self)</div>
+            <div class="method-desc">
+                <p>Convierte el texto de entrada a minúsculas.</p>
+            </div>
+        </div>
+        
+        <div class="method">
+            <div class="method-name">formato_titulo(self)</div>
+            <div class="method-desc">
+                <p>Convierte el texto a formato de título (capitaliza cada palabra).</p>
+            </div>
+        </div>
+        
+        <div class="method">
+            <div class="method-name">formato_oracion(self)</div>
+            <div class="method-desc">
+                <p>Capitaliza solo la primera letra de la primera palabra.</p>
+            </div>
+        </div>
+        
+        <div class="method">
+            <div class="method-name">formato_snake_case(self)</div>
+            <div class="method-desc">
+                <p>Convierte el texto a snake_case (todo en minúsculas con guiones bajos).</p>
+                <div class="method-examples">
+                    <h4>Ejemplo</h4>
+                    <p>Entrada: "Texto de prueba" → Salida: "texto_de_prueba"</p>
+                </div>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+                    <pre><code>texto = re.sub(r'[^a-zA-Z0-9]+', '_', texto).lower()</code></pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="method">
+            <div class="method-name">formato_camel_case(self)</div>
+            <div class="method-desc">
+                <p>Convierte el texto a camelCase (primera palabra en minúsculas, siguientes capitalizadas).</p>
+                <div class="method-examples">
+                    <h4>Ejemplo</h4>
+                    <p>Entrada: "texto ejemplo" → Salida: "textoEjemplo"</p>
+                </div>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+                    <pre><code>texto = re.sub(r'[^a-zA-Z0-9]+', ' ', texto).split()
+texto = texto[0].lower() + ''.join(word.capitalize() for word in texto[1:])</code></pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="method">
+            <div class="method-name">quitar_espacios(self)</div>
+            <div class="method-desc">
+                <p>Elimina espacios extras, dejando solo un espacio entre palabras.</p>
+            </div>
+        </div>
+        
+        <div class="method">
+            <div class="method-name">quitar_caracteres_especiales(self)</div>
+            <div class="method-desc">
+                <p>Elimina todos los caracteres no alfanuméricos (excepto espacios).</p>
+            </div>
+        </div>
+        
+        <div class="method">
+            <div class="method-name">quitar_duplicados(self)</div>
+            <div class="method-desc">
+                <p>Elimina palabras duplicadas manteniendo el orden original.</p>
+            </div>
+        </div>
+        
+        <div class="method">
+            <div class="method-name">generar_markdown(self)</div>
+            <div class="method-desc">
+                <p>Genera un encabezado Markdown nivel 1 con el texto.</p>
+                <div class="method-examples">
+                    <h4>Ejemplo</h4>
+                    <p>Entrada: "Título" → Salida: "# Título"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="method">
+            <div class="method-name">generar_html(self)</div>
+            <div class="method-desc">
+                <p>Genera un encabezado HTML h1 con el texto.</p>
+                <div class="method-examples">
+                    <h4>Ejemplo</h4>
+                    <p>Entrada: "Título" → Salida: "&lt;h1&gt;Título&lt;/h1&gt;"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="method">
+            <div class="method-name">copiar_resultado(self)</div>
+            <div class="method-desc">
+                <p>Copia el texto formateado al portapapeles del sistema.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="batch-functions" class="section">
+        <h2>Funciones de Procesamiento por Lotes</h2>
+        
+        <div class="method">
+            <div class="method-name">on_drop(self, event)</div>
+            <div class="method-desc">
+                <p>Maneja el evento de arrastrar y soltar archivos.</p>
+                <div class="method-args">
+                    <h4>Argumentos</h4>
+                    <div class="arg">
+                        <span class="arg-name">event</span>: Evento de drop con información de los archivos.
+                    </div>
+                </div>
+                <div class="method-examples">
+                    <h4>Comportamiento</h4>
+                    <p>Solo acepta archivos .txt o .csv y los añade a la lista de procesamiento.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="method">
+            <div class="method-name">select_files(self)</div>
+            <div class="method-desc">
+                <p>Abre un diálogo para seleccionar archivos a procesar.</p>
+            </div>
+        </div>
+        
+        <div class="method">
+            <div class="method-name">clear_file_list(self)</div>
+            <div class="method-desc">
+                <p>Limpia la lista de archivos seleccionados.</p>
+            </div>
+        </div>
+        
+        <div class="method">
+            <div class="method-name">process_files(self)</div>
+            <div class="method-desc">
+                <p>Procesa todos los archivos seleccionados con el formato elegido.</p>
+                <div class="method-examples">
+                    <h4>Flujo de trabajo</h4>
+                    <ol>
+                        <li>Verifica que hay archivos seleccionados</li>
+                        <li>Obtiene la función de formateo correspondiente</li>
+                        <li>Solicita directorio de salida</li>
+                        <li>Procesa cada archivo individualmente</li>
+                        <li>Guarda los resultados con prefijo "processed_"</li>
+                        <li>Muestra resumen al finalizar</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="examples" class="section">
+        <h2>Ejemplos de Uso</h2>
+        
+        <h3>Formateo Básico</h3>
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+            <pre><code># Convertir a mayúsculas
+app = TextFormatterApp()
+app.text_input.insert("1.0", "texto de ejemplo")
+app.convertir_mayusculas()
+print(app.text_output.get("1.0", "end-1c"))  # "TEXTO DE EJEMPLO"</code></pre>
+        </div>
+        
+        <h3>Procesamiento por Lotes</h3>
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+            <pre><code># Procesar múltiples archivos
+app = TextFormatterApp()
+# Simular drag and drop de archivos
+app.file_listbox.insert(tk.END, "archivo1.txt")
+app.file_listbox.insert(tk.END, "archivo2.csv")
+# Seleccionar formato
+app.format_var.set("MAYÚSCULAS")
+# Procesar
+app.process_files()</code></pre>
+        </div>
+    </section>
+    
+    <footer>
+        <p>Documentación generada para Advanced Text Formatter</p>
+        <p>© 2023 - Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+        function copyCode(button) {
+            const codeBlock = button.parentElement.querySelector('pre');
+            const range = document.createRange();
+            range.selectNode(codeBlock);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            document.execCommand('copy');
+            window.getSelection().removeAllRanges();
+            
+            // Feedback visual
+            const originalText = button.textContent;
+            button.textContent = '¡Copiado!';
+            setTimeout(() => {
+                button.textContent = originalText;
+            }, 2000);
+        }
+        
+        // Smooth scrolling para los enlaces del menú
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
