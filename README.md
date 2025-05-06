@@ -80,3 +80,11 @@ pyinstaller --onefile --windowed Proyecto.py
 ## **Enlace a la Demo**
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://proyecto2digi-cgdsk5knpkhchzpxhrsdw2.streamlit.app/)
 
+## 🛠 Tecnologías Utilizadas  
+- **Python 3.8+**: Lenguaje principal.  
+- **TKinter**: Interfaz gráfica.  
+- **tkinterdnd2**: Soporte para drag and drop.  
+- **Expresiones regulares (re)**: Para transformación de texto.  
+- **PyInstaller**: Para generar ejecutables.  
+
+🔗 *Más detalles en [ARCHITECTURE.md](docs/ARCHITECTURE.md)*  
