@@ -6,7 +6,7 @@ Este documento explica cómo colaborar, reportar issues, y sugerir mejoras.
 
 ---
 
-## 🛠 **Primeros Pasos**  
+## **Primeros Pasos**  
 
 1. **Clona el repositorio**:  
    ```bash
@@ -29,9 +29,9 @@ Este documento explica cómo colaborar, reportar issues, y sugerir mejoras.
 
 ---
 
-## 📝 **¿Cómo Contribuir?**  
+## **¿Cómo Contribuir?**  
 
-### 🔍 **Reportar Errores o Sugerir Mejoras**  
+###  **Reportar Errores o Sugerir Mejoras**  
 1. Abre un **issue** en GitHub.  
 2. Usa etiquetas claras (`bug`, `enhancement`, `documentation`).  
 3. Describe el problema o propuesta:  
@@ -39,7 +39,7 @@ Este documento explica cómo colaborar, reportar issues, y sugerir mejoras.
    - Pasos para reproducir (si es un bug).  
    - Capturas de pantalla (opcional).  
 
-### 💻 **Enviar Pull Requests (PR)**  
+### **Enviar Pull Requests (PR)**  
 1. Crea una rama descriptiva:  
    ```bash
    git checkout -b fix/typo-readme
@@ -51,7 +51,7 @@ Este documento explica cómo colaborar, reportar issues, y sugerir mejoras.
 
 ---
 
-## 🚀 **Áreas de Interés para Contribuciones**  
+## **Áreas de Interés para Contribuciones**  
 
 ### 1. **Mejoras de Funcionalidad**  
 - ✅ **Nuevos formatos**:  
@@ -81,18 +81,31 @@ Este documento explica cómo colaborar, reportar issues, y sugerir mejoras.
 
 ---
 
-## ❓ **Preguntas Frecuentes**  
+## Habilidades Específicas Requeridas
 
-### ¿Cómo propongo una nueva funcionalidad?  
-Abre un issue con la etiqueta `enhancement` y debate la idea con la comunidad.  
+### 1. Desarrollo Principal
+- **Python Avanzado**:
+  - Decoradores, context managers.
+  - Manejo de memoria en aplicaciones GUI.
+- **TKinter**:
+  - Customización de widgets (TTK styles).
+  - Event binding avanzado.
+- **Seguridad**:
+  - OWASP Top 10 para aplicaciones desktop.
 
-### ¿Necesito experiencia previa en TKinter o Streamlit?  
-¡No! Issues con la etiqueta `good first issue` son ideales para empezar.  
+### 2. Mantenimiento
+- **Testing**:
+  - pytest (coverage > 90%).
+  - Mocking de interfaces.
+- **DevOps**:
+  - Empaquetado con PyInstaller/Nuitka.
+  - CI/CD con GitHub Actions.
 
----
-
-## 📜 **Código de Conducta**  
-Este proyecto sigue el [Código de Conducta Contributor Covenant](https://www.contributor-covenant.org/).  
-
+### 3. Capacitación
+- **Cursos Obligatorios**:
+  1. [TKinter Best Practices](https://example.com/tkinter-course)
+  2. [Python Security](https://example.com/python-sec)
+- **Certificaciones Recomendadas**:
+  - Python Institute PCEP (o superior).
 ---
 

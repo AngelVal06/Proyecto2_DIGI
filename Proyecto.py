@@ -10,6 +10,18 @@ class TextFormatterApp(TkinterDnD.Tk):
     Permite formatear texto y procesar archivos de texto o CSV en lotes.
     """
 
+    EXTENSIONES_PERMITIDAS = {'.txt', '.csv'}
+    TAMANO_MAXIMO = 10 * 1024 * 1024  # 10 MB
+
+    def validar_archivo(self, ruta):
+        """Valida: existencia, extensión y tamaño del archivo."""
+        if not os.path.exists(ruta):
+            raise ValueError(f"Archivo no encontrado: {ruta}")
+        if os.path.splitext(ruta)[1].lower() not in self.EXTENSIONES_PERMITIDAS:
+            raise ValueError("Extensión no permitida")
+        if os.path.getsize(ruta) > self.TAMANO_MAXIMO:
+            raise ValueError("Archivo demasiado grande (>10MB)")
+
     def __init__(self):
         """
         Constructor de la clase. Configura la ventana principal y los estilos de la interfaz.
