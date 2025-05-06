@@ -2,7 +2,7 @@
 
 ### Nombre del Proyecto: DIGIpROJECT
 
-## 🚀 **Motivación**  
+## **Motivación**  
 Este proyecto nace para simplificar tareas repetitivas de formateo de texto, como:  
 - Convertir mayúsculas/minúsculas.  
 - Generar formatos técnicos (`snake_case`, `camelCase`).  
@@ -14,7 +14,7 @@ Está diseñado para **desarrolladores, escritores y analistas de datos** que ne
 
 ---
 
-## 🛠 **Instalación y Despliegue**  
+## **Instalación y Despliegue**  
 
 ### **Requisitos**  
 - Python 3.8+ ([Descargar aquí](https://www.python.org/downloads/)).  
@@ -47,7 +47,7 @@ pyinstaller --onefile --windowed Proyecto.py
 
 ---
 
-## 🎯 **Ejemplos de Uso**  
+## **Ejemplos de Uso**  
 
 ### **1. Formateo Básico**  
 - **Convertir a mayúsculas**:  
@@ -77,14 +77,12 @@ pyinstaller --onefile --windowed Proyecto.py
 
 ---
 
-## 🔗 **Enlace a la Demo**
+## **Enlace a la Demo**
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://proyecto2digi-cgdsk5knpkhchzpxhrsdw2.streamlit.app/)
 
-## 🛠 Tecnologías Utilizadas  
+## Tecnologías Utilizadas  
 - **Python 3.8+**: Lenguaje principal.  
 - **TKinter**: Interfaz gráfica.  
 - **tkinterdnd2**: Soporte para drag and drop.  
 - **Expresiones regulares (re)**: Para transformación de texto.  
 - **PyInstaller**: Para generar ejecutables.  
-
-🔗 *Más detalles en [ARCHITECTURE.md](docs/ARCHITECTURE.md)*  
