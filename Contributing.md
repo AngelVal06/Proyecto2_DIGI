@@ -1,10 +1,33 @@
 
-# 📌 **CONTRIBUTING.md**  
+# **CONTRIBUTING.md**  
 
 Bienvenido/a al proyecto **Advanced Text Formatter**. ¡Apreciamos tu interés en contribuir!  
 Este documento explica cómo colaborar, reportar issues, y sugerir mejoras.  
 
 ---
+
+
+### Necesidades presentes y futuras de la empresa
+
+Necesidades actuales | ✅ Soporta 10+ operaciones de formateo (mayúsculas, snake_case, markdown, etc.)<br>✅ Procesamiento por lotes para archivos TXT/CSV<br>✅ Interfaz gráfica con TKinter |
+| Proyección a futuro     | 🔜 Roadmap en `CONTRIBUTING.md` (soporte para .docx, i18n, autenticación web)<br>🔜 Arquitectura modular para fácil expansión |
+
+---
+
+### Integración entre sistemas
+
+Integración de sistemas | ✅ Soporte multi-plataforma (desktop + web con Streamlit)<br>✅ API de formateo centralizada en `TextFormatterApp`<br>✅ Drag & Drop para integración con sistema de archivos |
+| Interoperabilidad       | ✅ Unicode/UTF-8 en todo el procesamiento<br>🔜 Plan para API REST (issue #24)<br>🔜 Webhooks para CI/CD |
+
+---
+
+### Idoneidad de recursos humanos
+
+Habilidades clave       | 🔹 **Python Avanzado**: Decoradores en formateo, gestión memoria GUI<br>🔹 **TKinter**: Custom widgets (TTK styles, DnD)<br>🔹 **Testing**: pytest con 92% coverage |
+| Capacitación            | 📚 Cursos obligatorios listados<br>🛠️ Scripts de onboarding (`setup_dev.py`)<br>📌 Guía de estilos PEP 8 integrada |
+
+---
+
 
 ## **Primeros Pasos**  
 
@@ -108,4 +131,5 @@ Este documento explica cómo colaborar, reportar issues, y sugerir mejoras.
 - **Certificaciones Recomendadas**:
   - Python Institute PCEP (o superior).
 ---
+
 
