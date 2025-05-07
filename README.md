@@ -3,7 +3,7 @@
 
 # Project2_DIGI  
 
-### Project Name: DIGIpROJECT  
+### Project Name: Advanced Text Formatter 
 
 ## **Motivation**  
 This project was created to simplify repetitive text formatting tasks, such as:  
