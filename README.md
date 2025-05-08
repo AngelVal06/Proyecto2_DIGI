@@ -88,4 +88,18 @@ pyinstaller --onefile --windowed Proyecto.py
 - **Regular expressions (re)**: For text transformation.  
 - **PyInstaller**: For generating executables.  
 
----  
+---
+
+## **DevLog:** 
+In this section, I will write down each day I worked on the project and what I did that day.
+
+**March 1st:** On this day, I improved the code by fixing bugs and adding more functions. I also created the demo program for the code.
+
+**March 2nd:** On this day, I wrote the README and the `contributing.md` file.
+
+**March 3rd:** I wrote the code documentation as well as the documentation using the `pdoc` tool. I also created the license.
+
+**March 4th:** On this day, I checked all the project criteria to see what I was missing and what was done correctly. I also completed the DevLog and answered the questions.
+
+
+
